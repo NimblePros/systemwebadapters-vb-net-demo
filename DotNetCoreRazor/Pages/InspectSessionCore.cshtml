@@ -1,0 +1,29 @@
+﻿@page
+@using DotNetCoreRazor.Pages.Shared;
+@model DotNetCoreRazor.Pages.InspectSessionCoreModel
+@{
+    ViewData["Title"] = ".NET Core: Inspect Sessions";
+}
+<h1>@ViewData["Title"]</h1>
+
+<main class="blocks">
+    @foreach (var sessionModel in new _SessionExplorerModel[] { Model.ExistingSessionExplorerModel, Model.DifferentSessionExplorerModel, Model.SharedSessionExplorerModel })
+    {
+        <section>
+            <h2>@sessionModel.Heading</h2>
+
+            <p><strong>Session ID</strong>: @sessionModel.SessionID</p>
+            <p><strong>Message</strong>: @sessionModel.Message</p>
+            <ul>
+                @if (sessionModel.Collection != null)
+                {
+                    @foreach (var sessionVar in sessionModel.Collection.Keys)
+                    {
+                        <li><strong>@sessionVar</strong>: @sessionModel.Collection[sessionVar] </li>
+                    }
+                }
+            </ul>
+        </section>
+    }
+</main>
+}

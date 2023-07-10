@@ -1,0 +1,46 @@
+:root {
+    --dark-color: #024FA0;
+    --light-color: #93BEE6;
+}
+
+html {
+  font-size: 14px;
+  background-color: var(--light-color);
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+main.blocks {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+section {
+    border: 2px dashed black;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    flex-basis: 40%;
+    margin: 5px;
+    padding: 5px;
+    width: 300px;
+    height: 300px;
+}
